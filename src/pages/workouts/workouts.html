@@ -8,4 +8,10 @@
 
 <ion-content padding>
     <h3>My Workouts Page</h3>
+
+    <ion-list>
+        <ion-item *ngFor="let item of workouts" (click)="workoutSelected($event,item)">
+            {{item.title}}
+        </ion-item>
+    </ion-list>
 </ion-content>
