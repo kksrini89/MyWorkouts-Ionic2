@@ -25,6 +25,13 @@ export class WorkoutsPage {
         });
     }
 
+    ionViewWillEnter() {
+        this.subscription = this.workoutService.getWorkouts().subscribe(result => {
+            this.workouts = result;
+            console.log(result)
+        });
+    }
+
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }
